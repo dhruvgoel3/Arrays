@@ -4,14 +4,23 @@ package Prefix_Sum;
 import java.util.Scanner;
 
 public class ques_1 {
-    static int[] makePrefixSumArray(int arr[]) {
+    // static int[] makePrefixSumArray(int arr[]) { // solved usinga another array
+    // int n = arr.length;
+    // int pref[] = new int[n];
+    // pref[0] = arr[0];
+    // for (int i = 0; i < n; i++) {
+    // pref[i] = pref[i - 1] + arr[i];
+    // }
+    // return pref;
+
+    // }
+
+    static int[] makePrefixSumArrayMethodtwo(int arr[]) { // solved using another array
         int n = arr.length;
-        int pref[] = new int[n];
-        pref[0] = arr[0];
         for (int i = 0; i < n; i++) {
-            pref[i] = pref[i - 1] + arr[i];
+            arr[i] = arr[i - 1] + arr[i];
         }
-        return pref;
+        return arr;
 
     }
 
@@ -24,7 +33,6 @@ public class ques_1 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println(makePrefixSumArray(arr));
 
     }
 
